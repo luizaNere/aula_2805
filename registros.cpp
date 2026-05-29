@@ -19,19 +19,23 @@ struct Pessoa {
     Data data_nasc;
 };
 
+Aluno ler_aluno() {
+    Aluno fulano;
+
+    cout << "Digite o nome do aluno: ";
+    getline(cin, fulano.p.nome);
+
+    cout << "Digite o CPF do aluno: ";
+    getline(cin, fulano.p.cpf);
+
+    cout << "Digite o número de matrícula do aluno: ";
+    getline(cin, fulano.matricula);
+
+    cout << "Digite o curso do aluno: ";
+    getline(cin, fulano.curso);
+}
 
 int main() {
     Aluno a;
 
-    cout << "Digite o nome do aluno: ";
-    getline(cin, a.p.nome);
-
-    cout << "Digite o CPF do aluno: ";
-    getline(cin, a.p.cpf);
-
-    cout << "Digite o número de matrícula do aluno: ";
-    getline(cin, a.matricula);
-
-    cout << "Digite o curso do aluno: ";
-    getline(cin, a.curso);
 }
