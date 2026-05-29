@@ -78,9 +78,9 @@ int main() {
         cout << string(50, '_');
     }
 
-    cout << string(50, '_');
+    cout << string(50, '_') << endl;
     trezentasPag(livros, q);
-    cout << string(50, '_');
+    cout << string(50, '_') << endl;
 
     mc = maisCaro(livros, q);
     cout << endl << "O livro mais caro é: " << mc.titulo 
@@ -88,5 +88,7 @@ int main() {
          << endl << "Páginas: " << mc.paginas
          << endl << "Preço: R$" << setprecision(2) << mc.preco;
 
-    cout << "\nMédia: "
+    cout << endl << string(50, '_') << endl;
+    cout << "\nMédia de preço: R$" << fixed << setprecision(2) << mediaPrecos(livros, q) << endl;
+    
 }
