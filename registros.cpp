@@ -3,6 +3,10 @@
 #include <iomanip>
 using namespace std;
 
+struct Data {
+    int dia, mes, ano;
+};
+
 struct Aluno {
     Pessoa p;
     string curso;
@@ -12,7 +16,7 @@ struct Aluno {
 struct Pessoa {
     string nome;
     string cpf;
-    string data_nasc;
+    Data data_nasc;
 };
 
 
