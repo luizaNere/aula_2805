@@ -1,5 +1,5 @@
 # aula_2805
 
-Struct
-Pair
+Struct \
+Pair \
 Enum
