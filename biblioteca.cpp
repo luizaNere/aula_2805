@@ -7,7 +7,7 @@
 
 using namespace std;
 
-#define N 2
+#define N 5
 
 struct Livro{
     int codigo;
@@ -17,10 +17,18 @@ struct Livro{
     int qDisponivel;
 };
 
-Livro cadastrarLivro() {
+
+Livro cadastrarLivro(Livro livros[]) {
     Livro y;
     cout << "\nCódigo: ";
     cin >> y.codigo;
+    for(int i = 0; i < N; i++) {
+        if(y.codigo == livros[i].codigo) {
+            y.codigo = -1;
+            cout << "Código já existente." << endl;
+            return y;
+        }
+    }
 
     cout << "Título: ";
     cin.ignore();
@@ -125,7 +133,6 @@ void listarLivros(Livro livros[]) {
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
-
     Livro livros[N];
     int opcao;
 
@@ -134,7 +141,10 @@ int main() {
 
     for(int i = 0; i < N; i++) {
         cout << endl << "Livro " << i+1 << endl;
-        livros[i] = cadastrarLivro();
+        livros[i] = cadastrarLivro(livros);
+        if(livros[i].codigo == -1) {
+            i--;
+        }
         cout << endl;
     }
     
@@ -157,18 +167,28 @@ int main() {
 
         switch (opcao) {
             case 1:
+                cout << string(50, '-') << endl;
+                cout << "Opção EMPRÉSTIMO (1) selecionada." << endl;
                 emprestimo(livros);
                 break;
             case 2:
+                cout << string(50, '-') << endl;
+                cout << "Opção DEVOLUÇÃO (2) selecionada." << endl;
                 devolucao(livros);
                 break;
             case 3:
+                cout << string(50, '-') << endl;
+                cout << "Opção CONSULTA (4) selecionada." << endl;
                 consultarLivro(livros);
                 break;
             case 4:
+                cout << string(50, '-') << endl;
+                cout << "Opção LISTAGEM (4) selecionada." << endl;
                 listarLivros(livros);
                 break;
             case 5: // Encerra o programa
+                cout << string(50, '-') << endl;
+                cout << "Opção ENCERRAR (5) selecionada." << endl;
                 return 0;
             default:
                 cout << "Erro: opção invalida!" << endl;
